@@ -1,10 +1,10 @@
 package com.thoughtworks.capability.gtb.entrancequiz.model;
 
-public class Member {
+public class Trainee {
     private final Integer id;
     private final String name;
 
-    public Member(Integer id, String name) {
+    public Trainee(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
