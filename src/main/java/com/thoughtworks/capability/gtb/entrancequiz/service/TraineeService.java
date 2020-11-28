@@ -33,4 +33,8 @@ public class TraineeService {
     public List<Trainee> getAllTrainees() {
         return new ArrayList<>(traineeMap.values());
     }
+
+    public Map<Integer, Trainee> getAllTraineesMap() {
+        return traineeMap;
+    }
 }

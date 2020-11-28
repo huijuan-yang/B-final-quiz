@@ -1,5 +1,6 @@
 package com.thoughtworks.capability.gtb.entrancequiz.service;
 
+import com.thoughtworks.capability.gtb.entrancequiz.model.Trainee;
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainer;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,9 @@ public class TrainerService {
 
     public List<Trainer> getAllTrainers() {
         return new ArrayList<>(trainerMap.values());
+    }
 
+    public Map<Integer, Trainer> getAllTrainersMap() {
+        return trainerMap;
     }
 }

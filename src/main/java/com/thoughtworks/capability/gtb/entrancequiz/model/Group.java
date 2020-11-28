@@ -4,10 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Trainer {
-    private Integer id;
-    private String name;
+public class Group {
+
+    private Integer groupId;
+    private String groupName;
+    private List<Trainer> groupTrainers;
+    private List<Trainee> groupTrainees;
 }
