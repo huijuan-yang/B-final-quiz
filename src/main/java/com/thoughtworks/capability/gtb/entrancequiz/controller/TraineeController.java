@@ -2,10 +2,10 @@ package com.thoughtworks.capability.gtb.entrancequiz.controller;
 
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainee;
 import com.thoughtworks.capability.gtb.entrancequiz.service.TraineeService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -20,8 +20,14 @@ public class TraineeController {
     }
 
     @GetMapping("/trainees")
+    @ResponseStatus(HttpStatus.OK)
     public List<Trainee> getAllTrainees() {
         return traineeService.getAllTrainees();
     }
 
+//    @PostMapping("/trainees")
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Trainee addTrainee(@RequestBody @NotNull(message = "name cannot be null") String name) {
+//        return traineeService.addTrainee(name);
+//    }
 }
