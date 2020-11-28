@@ -2,9 +2,8 @@ package com.thoughtworks.capability.gtb.entrancequiz.controller;
 
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainer;
 import com.thoughtworks.capability.gtb.entrancequiz.service.TrainerService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,6 +19,12 @@ public class TrainerController {
     @GetMapping("/trainers")
     public List<Trainer> getAllTrainers() {
         return trainerService.getAllTrainers();
+    }
+
+    @PostMapping("/trainers")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addTrainer(@RequestBody String name) {
+        trainerService.addTrainer(name);
     }
 
 }

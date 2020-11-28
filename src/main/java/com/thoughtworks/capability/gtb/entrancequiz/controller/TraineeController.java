@@ -5,7 +5,6 @@ import com.thoughtworks.capability.gtb.entrancequiz.service.TraineeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
@@ -25,9 +24,9 @@ public class TraineeController {
         return traineeService.getAllTrainees();
     }
 
-//    @PostMapping("/trainees")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Trainee addTrainee(@RequestBody @NotNull(message = "name cannot be null") String name) {
-//        return traineeService.addTrainee(name);
-//    }
+    @PostMapping("/trainees")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void addTrainee(@RequestBody String name) {
+        traineeService.addTrainee(name);
+    }
 }
