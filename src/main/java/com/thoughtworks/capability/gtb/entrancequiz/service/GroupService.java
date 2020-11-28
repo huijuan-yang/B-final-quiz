@@ -25,7 +25,7 @@ public class GroupService {
         Map<Integer, Trainee> allTraineesMap = traineeService.getAllTraineesMap();
         int groupSize = allTrainersMap.size() / 2;
         for (int i = 0; i < groupSize; i++) {
-            groupMap.put(i+1, new Group(i+1, "组", new ArrayList<Trainer>(), new ArrayList<Trainee>()));
+            groupMap.put(i+1, new Group(i+1, i+1+" 组", new ArrayList<Trainer>(), new ArrayList<Trainee>()));
         }
         return shuffleAll(groupSize, allTrainersMap, allTraineesMap);
     }
@@ -39,6 +39,9 @@ public class GroupService {
     private void shuffleTrainers(int groupSize, Map<Integer, Trainer> allTrainersMap) {
         List trainersKeys = new ArrayList(allTrainersMap.keySet());
         Collections.shuffle(trainersKeys);
+        if (trainersKeys.size()%2 != 0) {
+            trainersKeys.remove(trainersKeys.size() - 1);
+        }
         int groupNumber = 1;
         for (Object o : trainersKeys) {
             if (groupNumber > groupSize) {
