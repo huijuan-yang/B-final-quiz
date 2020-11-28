@@ -19,10 +19,10 @@ public class TrainerService {
         trainerMap.put(3, new Trainer(3, "周丽"));
         trainerMap.put(4, new Trainer(4, "张钊"));
         trainerMap.put(5, new Trainer(5, "张巍"));
-        trainerMap.put(6, new Trainer(5, "朱玉前"));
-        trainerMap.put(7, new Trainer(5, "杜娟"));
-        trainerMap.put(8, new Trainer(5, "王雅君"));
-        trainerMap.put(9, new Trainer(5, "王晓峰"));
+        trainerMap.put(6, new Trainer(6, "朱玉前"));
+        trainerMap.put(7, new Trainer(7, "杜娟"));
+        trainerMap.put(8, new Trainer(8, "王雅君"));
+        trainerMap.put(9, new Trainer(9, "王晓峰"));
     }
 
     public List<Trainer> getAllTrainers() {
