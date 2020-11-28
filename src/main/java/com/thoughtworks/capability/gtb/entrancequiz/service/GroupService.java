@@ -1,6 +1,5 @@
 package com.thoughtworks.capability.gtb.entrancequiz.service;
 
-import com.sun.tools.javac.code.Attribute;
 import com.thoughtworks.capability.gtb.entrancequiz.model.Group;
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainee;
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainer;
@@ -47,7 +46,9 @@ public class GroupService {
             if (groupNumber > groupSize) {
                 groupNumber = 1;
             }
-            groupMap.get(groupNumber).getGroupTrainers().add(allTrainersMap.get(o));
+            Trainer obj = (Trainer)allTrainersMap.get(o);
+            obj.setGrouped(true);
+            groupMap.get(groupNumber).getGroupTrainers().add(obj);
             groupNumber ++;
         }
     }
@@ -60,7 +61,9 @@ public class GroupService {
             if (groupNumber > groupSize) {
                 groupNumber = 1;
             }
-            groupMap.get(groupNumber).getGroupTrainees().add(allTraineesMap.get(o));
+            Trainee obj = (Trainee)allTraineesMap.get(o);
+            obj.setGrouped(true);
+            groupMap.get(groupNumber).getGroupTrainees().add(obj);
             groupNumber ++;
         }
     }

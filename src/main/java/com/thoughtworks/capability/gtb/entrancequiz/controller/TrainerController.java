@@ -16,10 +16,13 @@ public class TrainerController {
         this.trainerService = trainerService;
     }
 
-    @GetMapping("/trainers")
-    public List<Trainer> getAllTrainers() {
-        return trainerService.getAllTrainers();
-    }
+    @GetMapping("/grouped-trainers")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Trainer> getAllGroupedTrainers() { return trainerService.getAllGroupedTrainers(); }
+
+    @GetMapping("/ungrouped-trainers")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Trainer> getAllUngroupedTrainers() { return trainerService.getAllUngroupedTrainers(); }
 
     @PostMapping("/trainers")
     @ResponseStatus(HttpStatus.CREATED)

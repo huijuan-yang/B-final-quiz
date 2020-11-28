@@ -18,10 +18,16 @@ public class TraineeController {
         this.traineeService = traineeService;
     }
 
-    @GetMapping("/trainees")
+    @GetMapping("/grouped-trainees")
     @ResponseStatus(HttpStatus.OK)
-    public List<Trainee> getAllTrainees() {
-        return traineeService.getAllTrainees();
+    public List<Trainee> getAllGroupedTrainees() {
+        return traineeService.getAllGroupedTrainees();
+    }
+
+    @GetMapping("/ungrouped-trainees")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Trainee> getAllUngroupedTrainees() {
+        return traineeService.getAllUngroupedTrainees();
     }
 
     @PostMapping("/trainees")

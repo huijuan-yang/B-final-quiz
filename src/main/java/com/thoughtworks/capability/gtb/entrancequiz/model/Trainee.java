@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Trainee {
     private Integer id;
     private String name;
+    private Boolean grouped;
 }
