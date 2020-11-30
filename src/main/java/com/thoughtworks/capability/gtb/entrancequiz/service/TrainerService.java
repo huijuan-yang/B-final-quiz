@@ -1,5 +1,6 @@
 package com.thoughtworks.capability.gtb.entrancequiz.service;
 
+// TODO GTB-工程实践: - Unused, 未使用的import语句
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainee;
 import com.thoughtworks.capability.gtb.entrancequiz.model.Trainer;
 import org.springframework.stereotype.Service;

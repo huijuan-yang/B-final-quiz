@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.stream.Collectors;
 
+// TODO GTB-工程实践: - Responsibility, 数据存储相关的操作，应该由Repository层来做
+// TODO GTB-完成度: - 应该使用数据库保存数据
 @Service
 public class TraineeService {
     private final Map<Integer, Trainee> traineeMap = new HashMap<>();
@@ -29,6 +31,7 @@ public class TraineeService {
     }
 
     public List<Trainee> getAllGroupedTrainees() {
+        // TODO GTB-工程实践: - "trainee.getGrouped() == true" 可以简化
         return traineeMap.values().stream().filter(trainee ->
                 trainee.getGrouped() == true).collect(Collectors.toList());
     }
@@ -54,6 +57,7 @@ public class TraineeService {
     }
 
     public void addTrainee(String name) {
+        // TODO GTB-工程实践: - 计算id的方式不够健壮，可以使用字段保存最大id
         Integer addId = traineeMap.size() + 1;
         traineeMap.put(addId, new Trainee(addId, name, false));
     }
